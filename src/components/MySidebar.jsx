@@ -60,7 +60,7 @@ const Sidebar = () => {
           </Navbar.Collapse>
         </div>
 
-        <div className="nav-btn">
+        <div className="nav-btn mb-5">
           <Button
             className="signup-btn"
             variant="success"

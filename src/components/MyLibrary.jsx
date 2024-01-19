@@ -1,10 +1,18 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import ShowSongs from "./ShowSongs";
 import { useSelector } from "react-redux";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+
+
+
+import { addToFavouriteAction, removeFromFavouriteAction } from "../redux/actions";
 
 const MyLibrary = () => {
     const favourites = useSelector((state) => state.favourite.list)
+    const dispatch = useDispatch();
+
+
     return (
         <>
             <div className="mainPage mt-3 ms-5">
@@ -28,9 +36,17 @@ const MyLibrary = () => {
                                     {favourites.map((song) => (
                                         <Col key={song.id}>
                                             <img src={song.album.cover_medium} alt={song.album.title} />
-                                            <p className="custom-font-size-p mt-3" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                                Titolo: {song.title.length ? song.title : `${song.title}...`}
-                                            </p>
+                                            <div className="d-flex justify-content-around align-items-center me-3">
+                                                <p className="custom-font-size-p mt-3" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                    Titolo: {song.title.length ? song.title : `${song.title}...`}
+                                                </p>
+                                                <div className="me-5">
+                                                    <AiFillHeart
+                                                        className="text-white ms-2"
+                                                        onClick={() => { dispatch(removeFromFavouriteAction(song.id)) }}
+                                                    />
+                                                </div>
+                                            </div>
                                         </Col>
                                     ))}
                                 </Row>

@@ -30,9 +30,9 @@ const MediaPlayer = () => {
             </Col>
             <Col
                     xs={4}
-                    className="playerControls"
+                    className="playerControls c-player"
                 >
-                    <Row className=" d-flex justify-content-center">
+                    <Row className=" d-flex justify-content-center ">
 
                         <Col xs={12} className="d-flex justify-content-center">
                             <Row>

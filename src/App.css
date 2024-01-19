@@ -88,11 +88,17 @@ ul {
 
 /* BOTTOM PLAYER SECTION*/
 
+.c-player {
+  margin-left: -180px!important;
+}
+
 .bg-container {
   height: 4.5rem;
+  margin-left: 230px!important;
   background-color: #282828;
   position: fixed;
   z-index: 2;
+  left:400px;
 }
 
 .playerControls .row {
@@ -235,4 +241,20 @@ ul {
 
 .custom-font-size-p {
   font-size: 0.8em;
+}
+
+.margin-custom{
+  margin-bottom: 200px;
+}
+
+.immagine {
+margin-top: 30%;
+  margin-left: 60%; 
+}
+
+.NotFound {
+  white-space: nowrap;
+  margin-left: 50%;
+  font-size: 80px;
+  color: red;
 }

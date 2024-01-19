@@ -12,7 +12,8 @@ Funzioni implementate:
 
 - ricerca nella sidebar;
 - fetch centralizzata;
-- mylibrary(gestione preferiti redux);
+- mylibrary(gestione preferiti redux), al click sul cuore aggiungi e rimuovi preferiti da MyLibrary;
 - al click sull'album porta ai brani;
 - al click sul singolo brano mostra il player sul footer con i dettagli della canzone. 
+
 
