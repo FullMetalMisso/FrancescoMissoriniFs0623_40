@@ -114,7 +114,7 @@ const MediaPlayer = () => {
                     {formattedTime}
                   </Col>
                 </Col>
-                <Col xs={12} className="mt-1">
+                <Col xs={12} className="mt-2">
                   <ProgressBar
                     now={(currentTime / (audioRef.current?.duration || 1)) * 100}
                     onChange={seekHandler}
