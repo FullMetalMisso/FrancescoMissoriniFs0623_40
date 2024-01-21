@@ -75,7 +75,7 @@ const Sidebar = () => {
           >
             Login
           </Button>
-          <a href="www">Cookie Policy</a> | <a href="www"> Privacy</a>
+          <a href="www"> Cookie Policy</a> | <a href="www"> Privacy</a>
         </div>
       </Navbar>
     </div>
