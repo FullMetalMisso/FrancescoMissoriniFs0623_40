@@ -12,12 +12,14 @@ const MediaPlayer = () => {
   const song = useSelector((state) => state.track.song);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [formattedTime, setFormattedTime] = useState("0:00");
   const audioRef = useRef(null);
 
   useEffect(() => {
     const updateProgressBar = () => {
       if (audioRef.current) {
         setCurrentTime(audioRef.current.currentTime);
+        setFormattedTime(formatTime(audioRef.current.currentTime));
       }
     };
 
@@ -54,7 +56,15 @@ const MediaPlayer = () => {
       const seekTime = e.target.value;
       audioRef.current.currentTime = seekTime;
       setCurrentTime(seekTime);
+      setFormattedTime(formatTime(seekTime));
     }
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    return `${minutes}:${formattedSeconds}`;
   };
 
   return (
@@ -98,13 +108,18 @@ const MediaPlayer = () => {
                     <Col>
                       <img src={Repeat} alt="repeat" width={10} height={10} />
                     </Col>
+                    
                   </Row>
+                  <Col xs={2} className="text-white ms-5 my-2">
+                    {formattedTime}
+                  </Col>
                 </Col>
-                <Col xs={12} className="mt-3">
+                <Col xs={12} className="mt-1">
                   <ProgressBar
                     now={(currentTime / (audioRef.current?.duration || 1)) * 100}
                     onChange={seekHandler}
                   />
+                  
                 </Col>
               </Row>
             </Col>
