@@ -26,7 +26,7 @@ const App = () => (
           
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/artist" element={<ArtistPage/>}/>
+            <Route path="/artist/:id" element={<ArtistPage/>}/>
             <Route path="/album/:id" element={<AlbumPage/>}/>
             <Route path="/search/:query" element={<SearchPage/>}/>
             <Route path="/mylibrary" element={<MyLibrary/>} />
